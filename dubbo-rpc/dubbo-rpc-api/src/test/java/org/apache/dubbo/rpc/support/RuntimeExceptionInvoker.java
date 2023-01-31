@@ -17,6 +17,8 @@
 
 package org.apache.dubbo.rpc.support;
 
+import java.util.logging.Level;
+import java.util.logging.logger;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.rpc.Invocation;
 import org.apache.dubbo.rpc.Result;
@@ -32,4 +34,8 @@ public class RuntimeExceptionInvoker extends MyInvoker {
     public Result invoke(Invocation invocation) throws RpcException {
         throw new RuntimeException("Runtime exception");
     }
+    @Deprecated
+    public void deprecatedMethod(){
+        LOGGER.log(Level.WARNING,"deprecatedMethod is deprecated and will be removed in future version.");
+    } 
 }
